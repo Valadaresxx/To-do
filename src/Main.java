@@ -58,6 +58,7 @@ public class Main {
                     int feito = Entrada.lerInteiros(s);
                     listaTarefas.get(feito).fazerTarefa();
                     break;
+
                 case 5:
                     continuar = false;
                     break;
