@@ -1,10 +1,7 @@
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         List<Tarefas> listaTarefas = new ArrayList<>();
@@ -19,7 +16,7 @@ public class Main {
                     Gerenciador.adicionarTarefas(listaTarefas, s);
                     break;
                 case 2:
-                    Gerenciador.mostrarLista(listaTarefas, s);
+                    Gerenciador.mostrarLista(listaTarefas);
                     break;
                 case 3:
                     Gerenciador.excluirTarefa(listaTarefas, s);
@@ -32,7 +29,7 @@ public class Main {
                     continuar = false;
                     break;
                 default:
-                    throw new IllegalStateException("Unexpected value: " + escolha);
+                    throw new IllegalStateException("Erro: " + escolha);
             }
         }
     }

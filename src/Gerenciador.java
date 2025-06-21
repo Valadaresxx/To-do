@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +23,7 @@ public class Gerenciador {
         lista.add(new Tarefas(nomeT, descricaoT));
     }
 
-    public static void mostrarLista(List<Tarefas> lista, Scanner s){
+    public static void mostrarLista(List<Tarefas> lista){
         if(lista.isEmpty()){
             System.out.println("Nenhuma tarefa. Ainda! pode adicionar!");
         }else{

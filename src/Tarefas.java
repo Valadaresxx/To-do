@@ -1,6 +1,6 @@
 public class Tarefas {
-    private String nome;
-    private String descricao;
+    private final String nome;
+    private final String descricao;
     private boolean concluida;
 
     public Tarefas(String nome, String descricao) {
@@ -12,8 +12,6 @@ public class Tarefas {
     public void fazerTarefa(){
         this.concluida = true;
     }
-
-
 
     public String getNome() {
         return nome;
