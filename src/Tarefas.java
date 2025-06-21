@@ -29,7 +29,7 @@ public class Tarefas {
 
     @Override
     public String toString() {
-        String status = concluida ? "[x]" : "[ ]";
+        String status = concluida ? "[x] " : "[ ] ";
         return status + nome + " - " + descricao;
 
     }

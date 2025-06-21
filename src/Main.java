@@ -12,54 +12,23 @@ public class Main {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.println("-------Menu--------");
-            System.out.println("1- Adicionar Tarefa");
-            System.out.println("2- Ver lista");
-            System.out.println("3- Excluir tarefa");
-            System.out.println("4- Fazer tarefa");
-            System.out.println("5- Sair ");
-            System.out.println("-------------------");
-
+            Gerenciador.exibirMenu();
             int escolha = Entrada.lerInteiros(s);
-
             switch (escolha) {
                 case 1:
-                    System.out.println("Digite a tarefa que deseja adcionar");
-                    String nomeT = s.nextLine();
-                    System.out.println("Digite a descrição da tarefa");
-                    String descricaoT = s.nextLine();
-                    listaTarefas.add(new Tarefas(nomeT, descricaoT));
+                    Gerenciador.adicionarTarefas(listaTarefas, s);
                     break;
                 case 2:
-                    for (int i = 0; i < listaTarefas.size(); i++) {
-                        System.out.println(i+1 + " - " + listaTarefas.get(i));
-                    }
+                    Gerenciador.mostrarLista(listaTarefas, s);
                     break;
                 case 3:
-                    System.out.println("Digite qual voce quer excluir");
-                    for (int i = 0; i < listaTarefas.size(); i++) {
-                        System.out.println(i+1 + " - " + listaTarefas.get(i));
-                    }
-                    int exclui = Entrada.lerInteiros(s);
-//                    int exclui = s.nextInt();
-                    if (exclui < 0 && exclui > listaTarefas.size()){
-                        System.out.println("Indice invalido!");
-                    }else{
-                        int indice = exclui-1;
-                        listaTarefas.remove(indice);
-                    }
-
+                    Gerenciador.excluirTarefa(listaTarefas, s);
                     break;
                 case 4:
-                    System.out.println("Qual tarefa quer concluir?");
-                    for (int i = 0; i < listaTarefas.size(); i++) {
-                        System.out.println(i+1 + " - " + listaTarefas.get(i));
-                    }
-                    int feito = Entrada.lerInteiros(s);
-                    listaTarefas.get(feito).fazerTarefa();
+                    Gerenciador.fazerTarefas(listaTarefas, s);
                     break;
-
                 case 5:
+                    Gerenciador.salvarTarefas(listaTarefas);
                     continuar = false;
                     break;
                 default:
